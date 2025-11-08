@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherNow</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/sunny-day.png" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Weather particles layer -->
+  <div id="weather-animation"></div>
+
+  <!-- Header -->
+  <header>
+    <h1><i class="fas fa-cloud-sun"></i> WeatherNow</h1>
+    <div class="right-header">
+      <div class="datetime">
+        <span id="date"></span>
+        <span id="time"></span>
+      </div>
+      <!-- Theme toggle -->
+      <button id="themeToggle" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="weather-card">
+      <div class="search">
+        <input id="city" type="text" placeholder="Enter city name..." />
+        <button id="searchBtn" title="Search"><i class="fas fa-search"></i></button>
+        <button id="locBtn" title="Use My Location"><i class="fas fa-location-arrow"></i></button>
+      </div>
+
+      <div id="loading" class="hidden">
+        <i class="fas fa-spinner fa-spin"></i> Fetching location...
+      </div>
+
+      <!-- Shimmer while loading current weather -->
+      <div id="shimmer" class="shimmer hidden">
+        <div class="shimmer-line title"></div>
+        <div class="shimmer-line temp"></div>
+        <div class="shimmer-line desc"></div>
+        <div class="shimmer-line small"></div>
+        <div class="shimmer-line small"></div>
+      </div>
+
+      <!-- Current weather -->
+      <div id="weather-data" class="hidden">
+        <h2 id="location"></h2>
+        <img id="icon" alt="icon" />
+        <p id="temp"></p>
+        <p id="desc"></p>
+        <div class="extra">
+          <p id="humid"></p>
+          <p id="wind"></p>
+        </div>
+      </div>
+
+      <p id="error" class="error"></p>
+    </div>
+
+    <!-- Forecast -->
+    <section id="forecast-section" class="hidden">
+      <h3>Next 5 Days Forecast</h3>
+      <!-- Forecast shimmer -->
+      <div id="forecast-shimmer" class="forecast-shimmer hidden">
+        <div class="forecast-shimmer-card"></div>
+        <div class="forecast-shimmer-card"></div>
+        <div class="forecast-shimmer-card"></div>
+        <div class="forecast-shimmer-card"></div>
+        <div class="forecast-shimmer-card"></div>
+      </div>
+      <!-- Forecast cards -->
+      <div class="forecast-container" id="forecast-container"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:u.arunbabya1234@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i><span>Email</span>
+      </a>
+      <a href="https://github.com/U-ARUN07" target="_blank" rel="noopener" title="GitHub">
+        <i class="fab fa-github"></i><span>GitHub</span>
+      </a>
+    </div>
+    <p>© 2025 U ARUN</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
